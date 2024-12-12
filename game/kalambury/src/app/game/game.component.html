@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="board">
+        <div class="word">
+            <p>your word is:</p>
+            <select [(ngModel)]="wordSelected" (change)="changeWord()">
+                <option *ngFor="let word of words" [value]="word">{{ word }}</option>
+            </select>
+        </div>
+        <!-- <p>your word is: {{ word }}</p> -->
+        <canvas id="canvas" #canvas height="256" width="256" (mouseup)="imageClassification()"></canvas>
+        <div class="button-container">
+            <button (click)="clearCanvas()">clear canvas</button>
+            <button (click)="imageClassification()">test image classification</button>
+        </div>
+        <p *ngIf="showCounter">next round starts in: <span>{{count}}</span></p>
+    </div>
+    <div class="chat-container">
+        <p>username: <span>{{username}}</span></p>
+        <div class="chat">
+            <div class="view">
+                <div class="view-part" [ngClass]="{'active': activeView === 0}" (click)="activeView = 0">chat</div>
+                <div class="view-part" [ngClass]="{'active': activeView === 1}" (click)="activeView = 1" (click)="getPlayerScores()">scores</div>
+            </div>
+            <div class="chat-data" *ngIf="activeView == 0">
+                <div class="message" *ngFor="let message of messages">
+                    {{ message }}
+                </div>
+            </div>
+            <div class="chat-data" *ngIf="activeView == 1 && players.length > 0">
+                <div class="message" *ngFor="let player of players">
+                    {{ player.username }}: {{ player.score }}
+                </div>
+            </div>
+        </div>
+        <p>send this code to a friend: <span>{{ roomId }}</span></p>
+    </div>
+</div>

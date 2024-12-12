@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="title">
+        <h1>charades game with ai <br/>image recognition</h1>
+        <h2 style="text-transform: uppercase;">created by</h2>
+        <h2>Aleksander Mielczarek, Emilia Pawłowska, Rafał Klebba</h2>
+    </div>
+    <input type="text" placeholder="input username" [(ngModel)]="username">
+    <p>and</p>
+    <div class="new-game">
+        <div class="difficulty-level">
+            <p>choose AI difficulty level:</p>
+            <select [(ngModel)]="difficultyLevel">
+                <option value="0">easy</option>
+                <option value="1">medium</option>
+                <option value="2">hard</option>
+                <option value="3">super hard</option>
+            </select>
+        </div>
+        <div class="difficulty-level">
+            <p>choose AI generator:</p>
+            <select [(ngModel)]="generatorMode">
+                <option value="0">Diffusion Model</option>
+                <option value="1">Generative Adversarial Network</option>
+            </select>
+        </div>
+        <button (click)="startGame()">start a new game</button>
+    </div>
+    <p>or</p>
+    <div class="join-game">
+        <input type="text" placeholder="input game code here" [(ngModel)]="gameCode">
+        <button (click)="joinGame()">join the game</button>
+    </div>
+</div>

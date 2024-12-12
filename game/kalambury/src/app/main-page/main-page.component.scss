@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #2F4F4F;
+    .title { 
+        text-align: center;
+        color: #4D49FF;
+        h1 { 
+            text-transform: uppercase; 
+            font-size: 65px;
+        }
+        h2 { font-weight: 200; }
+    }
+    p { 
+        font-size: 20px; 
+        margin: 10px 0;
+        color: #4D49FF;
+        font-weight: 200;
+    }
+
+    button {
+        margin-top: 10px;
+        background-color: rgba(77, 73, 255, 1);
+        border: 0;
+        color: white;
+        padding: 8px;
+        font-size: 16px;
+        width: 500px;
+        height: 44px;
+        box-shadow: 0px 1px 5px 0px #00000033;
+        border-radius: 10px;
+        font-family: 'Inter';
+        cursor: pointer;
+    }
+
+    input { 
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 484px;
+        height: 44px;
+        background-color: rgba(77, 73, 255, 0.05);
+        border: none;
+        box-shadow: 0px 1px 5px 0px #00000033;
+        color: #4D49FF;
+        font-family: 'Inter';
+
+        &::placeholder {
+            color:#4D49FF4D;
+            opacity: 1;
+        }
+    }
+
+    .join-game {
+        display: flex;
+        flex-direction: column;
+    }
+
+    select {
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 500px;
+        height: 44px;
+        background-color: rgba(77, 73, 255, 0.05);
+        border: none;
+        box-shadow: 0px 1px 5px 0px #00000033;
+        color: #4D49FF;
+        font-family: 'Inter';
+    }
+}
